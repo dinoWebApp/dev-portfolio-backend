@@ -27,8 +27,8 @@ export class AuthService {
     res.cookie('DP_ACCESS_TOKEN', accessToken, {
       httpOnly: true,
       path: '/',
-      // secure: true, // If you are testing locally and don't have HTTPS, comment this line out.
-      domain: 'localhost',
+      secure: true, // If you are testing locally and don't have HTTPS, comment this line out.
+      domain: this.configService.get<string>('CLIENT_DOMAIN'),
       maxAge: 1000 * 60 * 60, // token expiration duration
     });
 
@@ -50,10 +50,11 @@ export class AuthService {
     res.cookie('DP_ACCESS_TOKEN', accessToken, {
       httpOnly: true,
       path: '/',
-      // secure: true, // If you are testing locally and don't have HTTPS, comment this line out.
-      domain: 'dev-portfolio',
+      secure: true, // If you are testing locally and don't have HTTPS, comment this line out.
+      domain: this.configService.get<string>('CLIENT_DOMAIN'),
       maxAge: 1000 * 60 * 60, // token expiration duration
     });
+    
 
     return res.redirect(this.configService.get<string>('CLIENT_URL'));
   }
@@ -62,9 +63,9 @@ export class AuthService {
     res.clearCookie('DP_ACCESS_TOKEN', {
       httpOnly: true,
       path: '/',
-      // secure: true, // If you are testing locally and don't have HTTPS, comment this line out.
-      domain: 'dev-portfolio',
-    })
+      secure: true, // If you are testing locally and don't have HTTPS, comment this line out.
+      domain: this.configService.get<string>('CLIENT_DOMAIN'),
+    });
 
     return res.redirect(this.configService.get<string>('CLIENT_URL'));
   }
