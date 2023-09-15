@@ -7,12 +7,14 @@ import { Response } from 'express';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
+  // GoogleOAuth
   @Get('google')
   @UseGuards(AuthGuard('google'))
   async googleAuth(@Request() req) {
 
   }
 
+  // GithubOAuth
   @Get('github')
   @UseGuards(AuthGuard('github'))
   async githubAuth(@Request() req) {
