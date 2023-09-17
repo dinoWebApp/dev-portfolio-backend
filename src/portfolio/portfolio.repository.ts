@@ -52,12 +52,16 @@ export class PortfolioRepository extends Repository<Portfolio> {
   }
 
   async patchPortfolio(req, data) {
-    let portfolio = {
-      aboutme : data.aboutMe,
-      skills : data.skills,
-      projects : data.projects,
-      user : req.user
-    }
+    let portfolio = await this.portfolioRepository.findOne({
+      where: {
+        user: {
+          email : req.user.email
+        }
+      }
+    });
+    portfolio.aboutme = data.aboutMe;
+    portfolio.skills = data.skills;
+    portfolio.projects = data.projects;
 
     let save = await this.portfolioRepository.save(portfolio);
     return save;
