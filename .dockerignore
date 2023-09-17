@@ -1,0 +1,15 @@
+# Node.js 관련
+node_modules/
+npm-debug.log
+
+# NestJS 관련
+dist/
+
+# OS 관련
+.DS_Store
+*.log
+*.swp
+*.bak
+*.tmp
+*~
+._*
