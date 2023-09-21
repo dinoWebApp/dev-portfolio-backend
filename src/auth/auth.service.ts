@@ -79,10 +79,7 @@ export class AuthService {
   }
 
   async getUsers():Promise<string[]> {
-    let users = await this.userRepository.find({
-      select: ["email"]
-    });
-    return users.map(user=>user.email);
+    return this.userRepository.getUsers();
   }
 }
 
