@@ -3,6 +3,7 @@ import { JwtService } from '@nestjs/jwt';
 import { UserRepository } from './user.repository';
 import { Response } from 'express';
 import { ConfigService } from '@nestjs/config';
+import { User } from './user.entity';
 
 @Injectable()
 export class AuthService {
@@ -75,6 +76,11 @@ export class AuthService {
     });
 
     return res.redirect(this.configService.get<string>('CLIENT_URL'));
+  }
+
+  async getUsers():Promise<User[]> {
+    let users = this.userRepository.find();
+    return users;
   }
 }
 
