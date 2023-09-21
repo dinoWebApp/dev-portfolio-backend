@@ -79,7 +79,9 @@ export class AuthService {
   }
 
   async getUsers():Promise<User[]> {
-    let users = this.userRepository.find();
+    let users = this.userRepository.find({
+      select: ["email"]
+    });
     return users;
   }
 }
