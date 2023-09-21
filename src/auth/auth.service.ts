@@ -78,11 +78,11 @@ export class AuthService {
     return res.redirect(this.configService.get<string>('CLIENT_URL'));
   }
 
-  async getUsers():Promise<User[]> {
-    let users = this.userRepository.find({
+  async getUsers():Promise<string[]> {
+    let users = await this.userRepository.find({
       select: ["email"]
     });
-    return users;
+    return users.map(user=>user.email);
   }
 }
 

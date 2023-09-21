@@ -39,7 +39,7 @@ export class AuthController {
   }
 
   @Get('users')
-  getUsers() {
+  getUsers():Promise<string[]> {
     return this.authService.getUsers();
   }
 
