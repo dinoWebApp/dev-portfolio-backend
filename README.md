@@ -2,8 +2,6 @@
 
 포트폴리오 작성을 어려워하는 개발자들에게 포트폴리오 작성 가이드를 제공하고 작성된 포트폴리오를 url로 제공하는 웹사이트입니다.
 
-백엔드 REST API Docs 는 [여기](https://documenter.getpostman.com/view/27639458/2s9YJdXNgX)를 참고해주세요.
-
 URL: <https://www.dev-portfolio.kr>
 
 <img src='./images/dev-portfolio-main.png'>
@@ -32,6 +30,10 @@ DockerHub Webhooks (Continuous Deployment): <https://github.com/dinoWebApp/conti
     - passport-google-oauth20
     - passport-jwt
     - pg v8
+
+## API Docs
+
+REST API Docs 는 [여기](https://documenter.getpostman.com/view/27639458/2s9YJdXNgX)를 참고해주세요.
 
 ## 배포 및 아키텍처
 
@@ -67,3 +69,7 @@ DockerHub Webhooks (Continuous Deployment): <https://github.com/dinoWebApp/conti
 ## 포트폴리오 페이지
 
 - 이미지 호스팅 프로그램과 데이터 베이스에서 불러온 데이터들을 포트폴리오 양식에 맞게 배치합니다.
+
+## Contact
+
+Email : <kgjsmart1559@gmail.com>
